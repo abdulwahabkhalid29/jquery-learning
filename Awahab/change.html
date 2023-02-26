@@ -8,29 +8,218 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+<style> 
+    body{
+        background-color: rgba(235, 154, 79, 0.524);
+    }
+    
+    .inp{
+        background-color: rgba(120, 226, 212, 0.331);
+        color: white;
+    }
+    #panel, #flip {
+      padding: 5px;
+      font-size: 18px;
+      border-radius: 3px;
+    }
+    
+    #panel {
+      padding: 50px;
+      display: none;
+    }
+    .navbar{
+        background-color:rgb(199, 168, 168) ;
+    }
+    </style>
+    
 <body>
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <!-- Brand/logo -->
-            <a class="navbar-brand" href="#">
-                LOGO
-            </a>
+    <nav class="navbar navbar-expand-sm  navbar-dark">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">WebSiteName</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#" class="text-light">Click</a></li>
             
-            <!-- Links -->
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                <a class="nav-link" href="on-click.html">OnClick</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="Awahab/change.html">onChange</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">onHover</a>
-                </li>
-            </ul>
-        </nav>
-        <div class="container">
-            
+            <li><a href="#" class="text-light">On Change</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" class="text-light"><span class="glyphicon glyphicon-user text-light"></span> Sign Up</a></li>
+            <li><a href="#" class="text-light"><span class="glyphicon glyphicon-log-in text-light"></span> Login</a></li>
+          </ul>
         </div>
+      </nav>
+        <div class="container">
+            <h2 class="text-center mt-3"></h2>
+                <div class="card mt-5" style="background-image:  url('images.jpg');">
+                    
+                <div class="card-header" style="font-size: xx-large;">
+                    <p class="text-center flip text-light"><b> Developpers Form </b></p>
+                </div>
+                    <div class="card-body p-5 mb-5" id="panel" >
+                    <form>
+                        <div class="row text-light">
+                            <div class="col-md-6">
+                                <label for="name"><b> Name </b></label>
+                                <input  type="text" placeholder="Enter Your Name" class="inp form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email"><b>Email </b></label>
+                                <input  type="email" placeholder="Enter Your Email" class="inp form-control">
+                            </div>      
+                            <div class="col-md-12 mt-3 text-center">
+                                <label for="detail"><b>Skillset </b></label>
+                                <br>
+                                <input  type="radio" id="html" name="reg_form"  class="regForm" value="html1">
+
+                                <label for=""><b>HTML </b></label>
+                                &nbsp;
+                                <input  type="radio" id="css" name="reg_form"  class="regForm" value="css1">
+
+                                <label for=""><b>CSS </b></label>
+                                &nbsp;
+                                <input  type="radio" id="java" name="reg_form"  class="regForm" value="java1">
+
+                                <label for=""><b>JAVASCRIPT </b></label>
+                                &nbsp;
+                                <input  type="radio" id="jquery" name="reg_form"  class="regForm" value="jquery1">
+
+                                <label for=""><b>JQUERY </b></label><br>
+                                &nbsp;
+                            </div>
+                            <div class="col-md-12">
+                                <label for=""><b>Want To Apply </b></label>
+                                <select name="apply" id="apply" class="inp form-control">
+                                    <option value="">Please Select</option>
+
+                                </select>
+                            </div>
+                               <div class="col-md-12 mt-5 text-center pass"   style="display: none;">
+                                <label for=""><b>Password </b></label>
+                                <input  type="password" name="pass"  class="pass form-control inp">
+                               </div>
+                               <div class="col-md-12 mt-5 text-center passport_no"  style="display: none;">
+                                <label for=""><b>About </b></label>
+                                <textarea name="passport_no"  class="passport_no form-control inp" cols="20" rows="5"></textarea>
+                               </div>
+                               <div class="col-md-12 mt-5 text-center detail"  style="display: none;">
+                                <label for=""><b>Detail </b></label>
+                                <textarea name="detail"  class=" detail form-control inp" cols="20" rows="5"></textarea>
+                               </div>
+                               <div class="col-md-12 mt-5 text-center intro"  style="display: none;">
+                                <label for=""><b>Introduction </b></label>
+                                <textarea name="intro"  class="intro form-control inp" cols="20" rows="5"></textarea>
+                               </div>
+
+                               <div class="col-md-12 mt-5 text-center hobby" style="display: none;">
+                                <label for=""><b>Hobbies </b></label>
+                                <textarea name="hobby" class="hobby form-control inp" cols="20" rows="5"></textarea>
+                               </div>
+                        </div>      
+                    </form>
+                </div>
+                
+<!-- <button id="stop">Stop sliding</button>
+
+<div id="flip">Click to slide down panel</div>
+<div id="panel">Hello world!</div> -->
+
+            </div>
+        </div>
+        <script>
+        $("#html").change(function(){
+            var value = $(this).val();
+            if(value == 'html1'){
+                $("#apply").html(html1apply());
+            }
+        });
+        $("#css").change(function(){
+            var value = $(this).val();
+            if(value == 'css1'){
+                $("#apply").html(css1apply());
+            }
+        });
+        $("#java").change(function(){
+            var value = $(this).val();
+            if(value == 'java1'){
+                $("#apply").html(java1apply());
+            }
+        });
+        $("#jquery").change(function(){
+            var value = $(this).val();
+            if(value == 'jquery1'){
+                $("#apply").html(jquery1apply());
+            }
+        });
+        function html1apply(){
+            var html = '';
+            html='<option value="please select">Please Select</option><option value=" developer">Web Developer</option>';
+            return html;
+        }
+        function css1apply(){
+            var html = '';
+            html='<option value="please select">Please Select</option><option value="web ">Web Designer</option>';
+            return html;
+        }
+        function java1apply(){
+            var html = '';
+            html='<option value="please select">Please Select</option><option value="graphic ">Graphic Designer</option>';
+            return html;
+        }
+        function jquery1apply(){
+            var html = '';
+            html='<option value="please select">Please Select</option><option value="business">Business Analyst</option>';
+            return html;
+        }
+
+        $('.regForm').change(function(){
+            var value = $(this).val();
+            if(value == 'html1'){
+                $(".pass").show();
+                $(".passport_no").show();
+            }
+            else{
+                $(".pass").hide();
+                $(".passport_no").hide();
+            }
+        });
+        $('.regForm').change(function(){
+            var value = $(this).val();
+            if(value == 'css1'){
+                $(".detail").show();
+            }
+            else{
+                $(".detail").hide();
+            }
+        });
+        $('.regForm').change(function(){
+            var value = $(this).val();
+            if(value == 'java1'){
+                $(".intro").show();
+            }
+            else{
+                $(".intro").hide();
+            }
+        });
+        $('.regForm').change(function(){
+            var value = $(this).val();
+            if(value == 'jquery1'){
+                $(".hobby").show();
+            }
+            else{
+                $(".hobby").hide();
+            }
+});
+$(".flip").click(function(){
+$("#panel").slideDown(5000);
+});
+
+
+        </script>
 </body>
 </html>
